@@ -17,3 +17,19 @@ export function sum(target, property) {
     }
     return sum;
 }
+
+export class Vector {
+    constructor(x = 0, y = 0) {
+        this.set(x, y);
+
+        this[Symbol.iterator] = function* () {
+            yield this.x;
+            yield this.y;
+        }
+    }
+
+    set(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
