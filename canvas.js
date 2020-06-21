@@ -1,4 +1,4 @@
-function createCanvas(parent=document.body,w=300,h=200) {
+export function createCanvas(parent=document.body,w=300,h=200) {
   const c=document.createElement("canvas");
   c.width=w;
   c.height=h;
@@ -9,7 +9,7 @@ function createCanvas(parent=document.body,w=300,h=200) {
   const ctx=c.getContext("2d");
   return [c,ctx,w,h];
 }
-function fitScreen(c,r) {
+export function fitScreen(c,r) {
   let [w,h]=[innerWidth,innerWidth/r];
   if(h>innerHeight) [w,h]=[innerHeight*r,innerHeight];
   c.width=w;
